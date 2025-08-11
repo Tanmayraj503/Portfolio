@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="landing-page">
+        <div class="landing-text">Welcome to my<br>
+            Portfolio website
+        </div>
+        <div class="circle"></div>
+    </div>
+
+    <div class="main-content">
+        <div class="navbar">
+            <div class="navlogo">Tanmay raj</div>
+            <ul class="nav-links">
+                <li><a href="#Home">Home</a></li>
+                <li><a href="#About me">About me</a></li>
+                <li><a href="#Projects">Projects</a></li>
+                <li><a href="#Qualifications">Qualifications</a></li>
+                <li><a href="#Contact me">Contact me</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <div class="content">
+            <img src="ai_icon.png" alt="ai icon" id="icon1">
+            <div class="floating_icon">AI Summarize</div>
+            <div class="ai-summarize-menu">
+                <div class="ai-summarize-title">
+                    <small>Select your AI for quick analysis:</small>
+                </div>
+                <button onclick="openAI('chatgpt')">
+                    <img src="chatgpt.png" alt="chatgpt" class="icon"> ChatGPT</button>
+                <button onclick="openAI('google')">
+                    <img src="gemini-color.svg" alt="chatgpt" class="icon">
+                    Google AI</button>
+                <button onclick="openAI('perplexity')">
+                    <img src="perplexity.png" alt="perplexity" class="icon">
+                    Perplexity</button>
+                <button onclick="openAI('you')">
+                    <img src="you.png" alt="chatgpt" class="icon">
+                    You.com</button>
+                <button onclick="openAI('claude')">
+                    <img src="claude.png" alt="claude" class="icon">
+                    Claude</button>
+                <button onclick="openAI('grok')">
+                    <img src="grok.png" alt="grok" class="icon">
+                    Grok</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

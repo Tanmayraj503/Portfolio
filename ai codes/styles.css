@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: linear-gradient(-225deg, #65379B 0%, #886AEA 53%, #6457C6 100%);;
+    color: white;
+    overflow: hidden;
+}
+
+/* Main content */
+.main-content {
+    opacity: 0;
+    padding: 50px;
+    text-align: center;
+    transition: opacity 1s ease;
+}
+.main-content.visible {
+    opacity: 1;
+}
+
+/* Landing page */
+.landing {
+    position: fixed;
+    inset: 0;
+    background-image: linear-gradient(to top, #5ee7df 0%, #b490ca 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 10;
+}
+
+/* Text */
+.landing-text {
+    font-size: 2.5rem;
+    font-weight: bold;
+    position: relative;
+    z-index: 5;
+}
+
+/* Circle mask */
+.circle-mask {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 600vmin;
+    height: 600vmin;
+    background: #121212; /* Background of your main site */
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #65379B;
+    clip-path: circle(100% at 50% 50%);
+    z-index: 4;
+    transition: clip-path 1.2s ease, clip-path 1.2s ease;
+}
+
+.circle-mask.shrinks {
+    clip-path: circle(0% at 50% 50%);
+    width: 300vmin;
+    height: 300vmin;
+}
+/* Fade-out for landing text */
+.landing-text.fade-out {
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
