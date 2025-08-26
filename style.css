@@ -494,6 +494,9 @@ h1 {
         font-size: 12px;
         font-weight: 600;
     }
+    .ai-summarize-menu button:hover {
+        background-color: none;
+    }
 
     .icon {
         position: relative;
@@ -553,16 +556,16 @@ h1 {
 
 @media (max-width: 480px) {
     h1 {
-        font-size: 34px;
+        font-size: 30px;
     }
 
     .texts {
-        font-size: 21px;
+        font-size: 20px;
     }
 
     .intro {
         top: 360px;
-        max-width: 80%;
+        max-width: 86%;
         /* position: static;
         display: flex;
         justify-content: center;
@@ -578,7 +581,7 @@ h1 {
     }
 
     .intro p {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .intro .basicinfo {
