@@ -50,9 +50,9 @@ body {
     inset: 0;
     flex-direction: column;
     position: fixed;
-    opacity: 1;
+    opacity: 0;
     backdrop-filter: blur(10px);
-    transition: opacity 1s ease-in-out , transform 1s ease-in-out;
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
 
 .landing-text {
@@ -95,6 +95,7 @@ li a:hover {
     border-bottom: 2px solid rgb(226, 117, 15);
     text-shadow: 2px solid rgb(226, 117, 15)
 }
+
 .nav-links a.active {
     color: rgb(226, 117, 15);
     border-bottom: 2px solid rgb(226, 117, 15);
@@ -116,7 +117,60 @@ li a {
     font-size: 2rem;
     font-weight: bolder;
     color: rgb(226, 117, 15);
-    margin-left: 40px;
+    left: 40px;
+    position: sticky;
+    white-space: nowrap;
+}
+
+.navbar .action-btn {
+    display: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.drop-downmenu {
+    position: absolute;
+    top: 80px;
+    right: -100%;
+    width: 100%;
+    height: 0px;
+    background-color: #081b29;
+    overflow: hidden;
+    display: none;
+    transition: right 0.7s ease; 
+    z-index: 1000;
+}
+
+
+.drop-downmenu.open {
+    right: 0;
+    height: 100vh;
+}
+
+.drop-downmenu li {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    justify-content: flex-start;
+    padding: 1rem;
+    margin-left: 30px;
+}
+
+.drop-downmenu li a {
+    font-size: 1.5rem;
+    color: white;
+    display: flex;
+    text-decoration: none;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.drop-downmenu ul li a i {
+    width: 22px;
+    font-size: 26px;
+    text-align: center;
 }
 
 /* AI-SUMMARIZE MENU */
@@ -339,10 +393,45 @@ h1 {
 
 /* TABLET FIX */
 @media (max-width: 1139px) {
+    .nav-links {
+        display: none;
+    }
+
+    .navbar .action-btn {
+        display: block;
+    }
+
+    .navlogo {
+        left: 0px;
+        font-size: 1.9rem;
+    }
+
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .drop-downmenu {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        position: absolute;
+    }
+
+    .drop-downmenu ul {
+        margin-bottom: 300px;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        justify-content: space-evenly;
+    }
+
     .container {
         display: flex;
         justify-content: center;
-        
+
     }
 
     .content {
@@ -412,6 +501,7 @@ h1 {
         height: 19px;
     }
 }
+
 @media screen and (max-width: 1139px) {
     .intro {
         position: absolute;
@@ -430,7 +520,8 @@ h1 {
     .texts {
         font-size: 30px;
     }
-    h1{
+
+    h1 {
         font-size: 42px;
     }
 }
@@ -454,7 +545,8 @@ h1 {
     .texts {
         font-size: 26px;
     }
-    h1{
+
+    h1 {
         font-size: 38px;
     }
 }
@@ -488,12 +580,15 @@ h1 {
     .intro p {
         font-size: 18px;
     }
-    .intro .basicinfo{
+
+    .intro .basicinfo {
         display: flex;
         align-items: center;
         justify-content: center;
     }
-    .resume, .contacts{
+
+    .resume,
+    .contacts {
         justify-content: center;
         margin-top: 15px;
         max-width: 60px;

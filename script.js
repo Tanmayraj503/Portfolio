@@ -39,6 +39,25 @@ function openAI(platform) {
 
   window.open(url, '_blank');
 }
+
+const actionbtn=document.querySelector(".action-btn");
+const actionbtnicon=document.querySelector(".action-btn i");
+const dropdownmenu=document.querySelector(".drop-downmenu");
+
+actionbtn.addEventListener("click", ()=>{
+    dropdownmenu.classList.toggle("open");
+    const isopen = dropdownmenu.classList.contains("open");
+
+    if(isopen){
+        actionbtnicon.classList.remove("fa-bars");
+        actionbtnicon.classList.add("fa-xmark");
+    }
+    else{
+        actionbtnicon.classList.remove("fa-xmark");
+        actionbtnicon.classList.add("fa-bars");
+    }
+});
+
 const texts = [
     "I am a frontend developer",
     "मैं एक फ्रंट-एंड डेवलपर हूँ",
