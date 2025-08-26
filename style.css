@@ -406,7 +406,7 @@ h1 {
         font-weight: 600;
     }
     .ai-summarize-menu button:hover {
-        background-color: none
+        background-color: none;
     }
 
     .icon {
@@ -464,7 +464,7 @@ h1 {
 
 @media (max-width: 480px) {
     h1 {
-        font-size: 32px;
+        font-size: 30px;
     }
 
     .texts {
@@ -473,7 +473,7 @@ h1 {
 
     .intro {
         top: 360px;
-        max-width: 80%;
+        max-width: 86%;
         /* position: static;
         display: flex;
         justify-content: center;
