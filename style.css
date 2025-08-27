@@ -680,6 +680,9 @@ h1 {
     h1 {
         font-size: 38px;
     }
+    .content{
+        top: 80px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -692,7 +695,7 @@ h1 {
     }
 
     .intro {
-        top: 360px;
+        top: 300px;
         max-width: 86%;
         /* position: static;
         display: flex;
