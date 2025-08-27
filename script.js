@@ -39,6 +39,12 @@ function openAI(platform) {
 
   window.open(url, '_blank');
 }
+const toggle = document.getElementById("toggle-btn");
+const social = document.querySelector(".social");
+toggle.addEventListener("click", () => {
+social.classList.toggle("show");
+});
+
 
 const actionbtn=document.querySelector(".action-btn");
 const actionbtnicon=document.querySelector(".action-btn i");
