@@ -709,7 +709,10 @@ h1 {
         font-size: 30px;
     }
     .navlogo {
-        font-size: 24px;
+        font-size: 26px;
+    }
+    .navbar {
+        padding: 0 10px;
     }
 
     .texts {
