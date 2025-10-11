@@ -113,7 +113,7 @@ li a {
 }
 
 .navlogo {
-    font-size: 2rem;
+    font-size: 32px;
     font-weight: bolder;
     color: rgb(226, 117, 15);
     left: 40px;
@@ -709,7 +709,7 @@ h1 {
         font-size: 30px;
     }
     .navlogo {
-        font-size: 1.2rem;
+        font-size: 20px;
     }
 
     .texts {
