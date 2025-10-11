@@ -711,8 +711,8 @@ h1 {
     .navlogo {
         font-size: 26px;
     }
-    .navbar {
-        margin-bottom: 10px;
+    .content {
+        margin-top: 20px;
     }
 
     .texts {
