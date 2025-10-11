@@ -194,7 +194,13 @@ li a {
     font-size: 24px;
     position: relative;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background 0.3s ease;
+    transition: all 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+
 }
 
 .main-btn:hover {
@@ -233,6 +239,11 @@ li a {
 }
 
 .social-links {
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
     height: 50px;
     text-decoration: none;
     width: 50px;
