@@ -708,6 +708,9 @@ h1 {
     h1 {
         font-size: 30px;
     }
+    .navlogo {
+        font-size: 1.2rem;
+    }
 
     .texts {
         font-size: 20px;
