@@ -371,10 +371,15 @@ li a {
     color: rgb(99, 98, 98);
     gap: 4px;
     white-space: nowrap;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
 }
 
-button:hover {
-    background-color: #FF7F11
+.ai-summarize-menu button:hover {
+    background-color: #FF7F11;
 }
 
 .icon {
@@ -685,6 +690,10 @@ h1 {
 
     .texts {
         font-size: 26px;
+    }
+
+    .ai-summarize-menu button:hover{
+        background-color: white;
     }
 
     h1 {
