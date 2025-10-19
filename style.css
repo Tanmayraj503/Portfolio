@@ -5,8 +5,16 @@
     
 }
 /* HIDE SCROLLBAR */
-.container::-webkit-scrollbar {
+body{
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+body::-webkit-scrollbar {
   display: none;              
+}
+
+.container{
+    overflow: visible !important;
 }
 
 /* MAIN CONTENT */
@@ -185,6 +193,38 @@ li a {
     text-align: center;
 }
 
+/* scroll to top button */
+.scrolltotop {
+    position: fixed;
+    left: 50%;
+    bottom: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: orange;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    display: none;
+    /* opacity: 0; */
+    /* visibility: hidden; */
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+.scrolltotop:hover {
+    background-color: rgb(233, 152, 3);
+    transform: translateY(-3px);
+}
+.scrolltotop.show{
+    /* opacity: 1; */
+    /* visibility: visible; */
+    display: flex;
+}
+
 /* social */
 .floating-btn {
     position: fixed;
@@ -337,7 +377,7 @@ li a {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-top: 90px;
+    margin-top: 180px;
     /* position: absolute;
     margin: 0 auto; */
     margin-left: 230px;
@@ -350,7 +390,7 @@ li a {
 
 .content {
     overflow: hidden;
-    position: relative;
+    position: absolute;
     top: 210px;
     left: 60px;
     border: 0.1px solid rgb(238, 238, 238);

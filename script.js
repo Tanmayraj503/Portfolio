@@ -106,3 +106,45 @@ function type(){
 }
 type();
 
+// scroll to top button
+
+const scrollToTopBtn = document.querySelector(".scrolltotop");
+window.onscroll = function(){
+    if(document.body.scrollTop > 10 || document.documentElement.scrollTop > 10){
+      scrollToTopBtn.classList.add('show');
+    } else {
+      scrollToTopBtn.classList.remove('show');
+    }
+};
+
+scrollToTopBtn.addEventListener("click", function(){
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+
+    // const btn = document.getElementById('scrolltotop');
+
+// // Show button when user scrolls down 10px
+// window.addEventListener('scroll', function() {
+//     const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    
+//     console.log('Scroll position:', scrollTop); // Debug line - check console
+    
+//     if (scrollTop > 10) {
+//         btn.classList.add('show');
+//         console.log('Button should show'); // Debug line
+//     } else {
+//         btn.classList.remove('show');
+//         console.log('Button should hide'); // Debug line
+//     }
+// });
+
+// // Scroll to top when button is clicked
+// btn.addEventListener('click', function() {
+//     window.scrollTo({
+//         top: 0,
+//         behavior: 'smooth'
+//     });
+// });
