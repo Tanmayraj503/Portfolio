@@ -3,6 +3,7 @@ setTimeout(() => {
     setTimeout(() => {
         document.querySelector(".main-content").classList.add("visible");
         document.querySelector(".container").classList.add("visible");
+        document.querySelector(".trial").classList.add("visible");
         document.querySelector(".landing-page").style.display= "none";
     }, 1000);
     
