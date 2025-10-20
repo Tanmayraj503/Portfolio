@@ -46,24 +46,44 @@ toggle.addEventListener("click", () => {
 social.classList.toggle("show");
 });
 
+const actionbtn = document.querySelector(".action-btn");
+const actionbtnicon = document.querySelector(".action-btn i");
+const dropdownmenu = document.querySelector(".drop-downmenu");
+const menuLinks = document.querySelectorAll(".drop-downmenu li a");
 
-const actionbtn=document.querySelector(".action-btn");
-const actionbtnicon=document.querySelector(".action-btn i");
-const dropdownmenu=document.querySelector(".drop-downmenu");
-
-actionbtn.addEventListener("click", ()=>{
-    dropdownmenu.classList.toggle("open");
+actionbtn.addEventListener("click", () => {
     const isopen = dropdownmenu.classList.contains("open");
 
-    if(isopen){
+    if (!isopen) {
+        dropdownmenu.classList.add("open");
+        actionbtn.classList.add("active");
         actionbtnicon.classList.remove("fa-bars");
         actionbtnicon.classList.add("fa-xmark");
-    }
-    else{
-        actionbtnicon.classList.remove("fa-xmark");
-        actionbtnicon.classList.add("fa-bars");
+        document.body.style.overflow = "hidden";
+    } else {
+        closeMenu();
     }
 });
+
+function closeMenu() {
+    dropdownmenu.classList.remove("open");
+    actionbtn.classList.remove("active");
+    actionbtnicon.classList.remove("fa-xmark");
+    actionbtnicon.classList.add("fa-bars");
+    document.body.style.overflow = "";
+}
+
+menuLinks.forEach(link => {
+    link.addEventListener("click", closeMenu);
+});
+
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && dropdownmenu.classList.contains("open")) {
+        closeMenu();
+    }
+});
+
+// tywriter animation
 
 const texts = [
     "I am a frontend developer",
