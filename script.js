@@ -1,3 +1,19 @@
+
+  const revealElements = document.querySelectorAll('.reveal-scale');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      }
+    });
+  }, { threshold: 0.2 }); // triggers when 20% of element is visible
+
+  revealElements.forEach(el => observer.observe(el));
+
+
+
+
 setTimeout(() => {
     document.querySelector(".landing-page").classList.add("slide-out");
     setTimeout(() => {
@@ -8,6 +24,19 @@ setTimeout(() => {
     }, 1000);
     
 }, 1000);
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
 
 // floating-icon
 
