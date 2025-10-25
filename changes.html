@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanmay Raj</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            
+        }
+
+        body {
+           
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .text-container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 4rem;
+            font-weight: bolder;
+            color: rgb(226, 117, 15);
+            /* font-weight: bold; */
+            color: white;
+            /* letter-spacing: 2px; */
+            transition: all 1.3s ease-out;
+        }
+
+        .text-container.move-to-corner {
+            top: 34px;
+            left: 72px;
+            transform: translate(0, 0);
+            font-size: 32px;
+        }
+
+        .text-container.disappear {
+            opacity: 0;
+            transition: opacity 0.5s ease-out;
+        }
+
+        .letter {
+            opacity: 0;
+            animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            font-weight: bolder;
+            color: rgb(226, 117, 15);
+    
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px) scale(0.8);
+                filter: blur(4px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                filter: blur(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="text-container" id="textContainer"></div>
+
+    <script>
+        const textContainer = document.getElementById('textContainer');
+        const text = 'Tanmay raj';
+
+        // Create spans for each letter with variable timing
+        const letters = text.split('');
+        const midPoint = Math.floor(letters.length / 2);
+
+        let cumulativeDelay = 0;
+        letters.forEach((char, index) => {
+            const span = document.createElement('span');
+            span.className = 'letter';
+            span.textContent = char;
+            span.style.animationDelay = `${cumulativeDelay}s`;
+            textContainer.appendChild(span);
+
+            // First half: slower reveal, Second half: faster reveal
+            const delayFactor = index < midPoint ? 0.15 : 0.05;
+            cumulativeDelay += delayFactor;
+        });
+
+        // Move to corner after all letters are revealed
+        const totalTime = cumulativeDelay * 1000 + 600;
+        setTimeout(() => {
+            textContainer.classList.add('move-to-corner');
+            
+            // Make text disappear 2 seconds after it reaches the corner
+            setTimeout(() => {
+                textContainer.classList.add('disappear');
+            }, 2000);
+        }, totalTime);
+    </script>
+</body>
+
+</html>
